@@ -41,18 +41,19 @@ public class InicioSesion extends javax.swing.JFrame {
     jLabel1 = new javax.swing.JLabel();
     txtUserNombre = new javax.swing.JTextField();
     jSeparator1 = new javax.swing.JSeparator();
-    jLabel2 = new javax.swing.JLabel();
     jSeparator2 = new javax.swing.JSeparator();
-    jLabel3 = new javax.swing.JLabel();
     btnIniciarSesion = new javax.swing.JButton();
     txtUserPassword = new javax.swing.JPasswordField();
+    jCheckBox1 = new javax.swing.JCheckBox();
+    jLabel2 = new javax.swing.JLabel();
+    jLabel3 = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
     jPanel1.setBackground(new java.awt.Color(204, 255, 255));
     jPanel1.setPreferredSize(new java.awt.Dimension(350, 300));
 
-    jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+    jLabel1.setFont(new java.awt.Font("Algerian", 1, 24)); // NOI18N
     jLabel1.setText("Login");
 
     txtUserNombre.setBackground(new java.awt.Color(204, 255, 255));
@@ -63,12 +64,7 @@ public class InicioSesion extends javax.swing.JFrame {
       }
     });
 
-    jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-    jLabel2.setText("Contraseña:");
-
-    jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-    jLabel3.setText("Usuario");
-
+    btnIniciarSesion.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 12)); // NOI18N
     btnIniciarSesion.setText("Iniciar Sesion");
     btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,59 +75,78 @@ public class InicioSesion extends javax.swing.JFrame {
     txtUserPassword.setBackground(new java.awt.Color(204, 255, 255));
     txtUserPassword.setText("jPasswordField1");
     txtUserPassword.setBorder(null);
+    txtUserPassword.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        txtUserPasswordActionPerformed(evt);
+      }
+    });
+
+    jCheckBox1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+    jCheckBox1.setText("Mostrar contraseña");
+    jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jCheckBox1ActionPerformed(evt);
+      }
+    });
+
+    jLabel2.setText("Nombre:");
+
+    jLabel3.setText("Apellido:");
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
     jPanel1Layout.setHorizontalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        .addContainerGap(26, Short.MAX_VALUE)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+          .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+            .addComponent(txtUserNombre)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addComponent(txtUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
+        .addGap(69, 69, 69))
       .addGroup(jPanel1Layout.createSequentialGroup()
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGap(23, 23, 23)
-            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-              .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                  .addComponent(txtUserNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
-                  .addComponent(jSeparator1)))
-              .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jSeparator2))))
+            .addGap(30, 30, 30)
+            .addComponent(btnIniciarSesion)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jCheckBox1))
           .addGroup(jPanel1Layout.createSequentialGroup()
-            .addGap(24, 24, 24)
-            .addComponent(jLabel2)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-            .addComponent(txtUserPassword)))
+            .addGap(145, 145, 145)
+            .addComponent(jLabel1)))
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-      .addGroup(jPanel1Layout.createSequentialGroup()
-        .addGap(156, 156, 156)
-        .addComponent(jLabel1)
-        .addGap(0, 0, Short.MAX_VALUE))
-      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-        .addContainerGap(132, Short.MAX_VALUE)
-        .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(115, 115, 115))
     );
     jPanel1Layout.setVerticalGroup(
       jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(jPanel1Layout.createSequentialGroup()
-        .addGap(19, 19, 19)
+        .addGap(36, 36, 36)
         .addComponent(jLabel1)
-        .addGap(76, 76, 76)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGap(60, 60, 60)
+            .addComponent(txtUserNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(18, 18, 18))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(jLabel2)
+            .addGap(26, 26, 26)))
         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(txtUserNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(txtUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(jLabel3))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(44, 44, 44)
-        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jLabel2)
-          .addComponent(txtUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(18, 18, 18)
-        .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(43, 43, 43)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jCheckBox1))
         .addContainerGap(15, Short.MAX_VALUE))
     );
 
@@ -175,10 +190,16 @@ public class InicioSesion extends javax.swing.JFrame {
             //Ahora un if para saber que rol tiene el usuario
             if(crgo.equals("Gerente")){
               Administrador admin= new Administrador();
+              //Para que el menu de login se cierre
+              setVisible(false);
               admin.setVisible(true);
+              
             }else if(crgo.equals("Servicio al cliente")){
                 ServicioCliente serCli= new ServicioCliente();
+                //Para que el menu de login se cierre
+              setVisible(false);
                 serCli.setVisible(true);
+                
             }
             
           }
@@ -199,6 +220,22 @@ public class InicioSesion extends javax.swing.JFrame {
   private void txtUserNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserNombreActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_txtUserNombreActionPerformed
+
+  private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+    //funcionalidad del check box
+    
+    if(jCheckBox1.isSelected()){
+      txtUserPassword.setEchoChar((char)0);
+    }
+    else {
+    txtUserPassword.setEchoChar('*');
+    }
+    
+  }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+  private void txtUserPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserPasswordActionPerformed
+    // TODO add your handling code here:
+  }//GEN-LAST:event_txtUserPasswordActionPerformed
 
   /**
    * @param args the command line arguments
@@ -237,6 +274,7 @@ public class InicioSesion extends javax.swing.JFrame {
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnIniciarSesion;
+  private javax.swing.JCheckBox jCheckBox1;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;
   private javax.swing.JLabel jLabel3;

@@ -16,16 +16,14 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author PC
  */
-public class ServicioCliente extends javax.swing.JFrame {
+public class AdministradorCliente extends javax.swing.JFrame {
 
   /**
-   * Creates new form ServicioCliente
-   */
-  
-  Coneccion con= new Coneccion(); 
+   * Creates new form AdministradorCliente
+   */Coneccion con= new Coneccion(); 
   Connection cn= con.EstablacerConnection();
   
-  public ServicioCliente() {
+  public AdministradorCliente() {
     initComponents();
     mostrarDatos();
   }
@@ -39,6 +37,14 @@ public class ServicioCliente extends javax.swing.JFrame {
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
+    jPanel4 = new javax.swing.JPanel();
+    jScrollPane1 = new javax.swing.JScrollPane();
+    tabla2 = new javax.swing.JTable();
+    jPanel1 = new javax.swing.JPanel();
+    btnEditar = new javax.swing.JButton();
+    btnGuardar = new javax.swing.JButton();
+    jButton1 = new javax.swing.JButton();
+    btnEliminar = new javax.swing.JButton();
     jPanel3 = new javax.swing.JPanel();
     jLabel1 = new javax.swing.JLabel();
     txtid = new javax.swing.JTextField();
@@ -56,21 +62,115 @@ public class ServicioCliente extends javax.swing.JFrame {
     txtFechaNacimiento = new javax.swing.JTextField();
     jLabel7 = new javax.swing.JLabel();
     txtestadocuenta = new javax.swing.JTextField();
-    jPanel4 = new javax.swing.JPanel();
-    jScrollPane1 = new javax.swing.JScrollPane();
-    tabla3 = new javax.swing.JTable();
-    jPanel1 = new javax.swing.JPanel();
-    btnEditar = new javax.swing.JButton();
-    btnGuardar = new javax.swing.JButton();
-    jButton1 = new javax.swing.JButton();
     jMenuBar1 = new javax.swing.JMenuBar();
-    jMenu2 = new javax.swing.JMenu();
-    jMenu4 = new javax.swing.JMenu();
+    jMenu7 = new javax.swing.JMenu();
     jMenu1 = new javax.swing.JMenu();
-    jMenu5 = new javax.swing.JMenu();
+    jMenu4 = new javax.swing.JMenu();
+    jMenu6 = new javax.swing.JMenu();
+    jMenu2 = new javax.swing.JMenu();
     jMenu3 = new javax.swing.JMenu();
+    jMenu5 = new javax.swing.JMenu();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+    jPanel4.setBackground(new java.awt.Color(153, 153, 255));
+    jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Información"));
+
+    tabla2.setModel(new javax.swing.table.DefaultTableModel(
+      new Object [][] {
+        {null, null, null, null, null, null, null, null},
+        {null, null, null, null, null, null, null, null},
+        {null, null, null, null, null, null, null, null},
+        {null, null, null, null, null, null, null, null}
+      },
+      new String [] {
+        "Id", "cedula", "nombre", "apellido", "Id Plan", "Estado cuenta", "fechaNacimiento", "fechaIngreso"
+      }
+    ));
+    tabla2.addMouseListener(new java.awt.event.MouseAdapter() {
+      public void mouseClicked(java.awt.event.MouseEvent evt) {
+        tabla2MouseClicked(evt);
+      }
+    });
+    jScrollPane1.setViewportView(tabla2);
+
+    javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+    jPanel4.setLayout(jPanel4Layout);
+    jPanel4Layout.setHorizontalGroup(
+      jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel4Layout.createSequentialGroup()
+        .addContainerGap()
+        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 684, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+    );
+    jPanel4Layout.setVerticalGroup(
+      jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel4Layout.createSequentialGroup()
+        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(0, 0, Short.MAX_VALUE))
+    );
+
+    jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+    jPanel1.setForeground(new java.awt.Color(0, 204, 204));
+
+    btnEditar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+    btnEditar.setText("Editar");
+    btnEditar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnEditarActionPerformed(evt);
+      }
+    });
+
+    btnGuardar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+    btnGuardar.setText("Gaurdar");
+    btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnGuardarActionPerformed(evt);
+      }
+    });
+
+    jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+    jButton1.setText("Limpiar");
+    jButton1.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1ActionPerformed(evt);
+      }
+    });
+
+    btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+    btnEliminar.setText("Eliminar");
+    btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btnEliminarActionPerformed(evt);
+      }
+    });
+
+    javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+    jPanel1.setLayout(jPanel1Layout);
+    jPanel1Layout.setHorizontalGroup(
+      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel1Layout.createSequentialGroup()
+        .addGap(42, 42, 42)
+        .addComponent(btnGuardar)
+        .addGap(18, 18, 18)
+        .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(18, 18, 18)
+        .addComponent(btnEliminar)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(jButton1)
+        .addGap(72, 72, 72))
+    );
+    jPanel1Layout.setVerticalGroup(
+      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(jPanel1Layout.createSequentialGroup()
+        .addGap(15, 15, 15)
+        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+          .addComponent(btnEditar)
+          .addComponent(btnGuardar)
+          .addComponent(jButton1)
+          .addComponent(btnEliminar))
+        .addContainerGap(67, Short.MAX_VALUE))
+    );
 
     jPanel3.setBackground(new java.awt.Color(204, 255, 255));
     jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos"));
@@ -89,7 +189,7 @@ public class ServicioCliente extends javax.swing.JFrame {
     });
 
     jLabel2.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
-    jLabel2.setText("Cedula");
+    jLabel2.setText("cedula");
 
     txtcedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
     txtcedula.setText("...");
@@ -195,120 +295,41 @@ public class ServicioCliente extends javax.swing.JFrame {
         .addContainerGap(62, Short.MAX_VALUE))
     );
 
-    jPanel4.setBackground(new java.awt.Color(153, 153, 255));
-    jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Información"));
+    jMenu7.setText("Interfaces");
 
-    tabla3.setModel(new javax.swing.table.DefaultTableModel(
-      new Object [][] {
-        {null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null},
-        {null, null, null, null, null, null, null, null}
-      },
-      new String [] {
-        "Id", "cedula", "nombre", "apellido", "Id Plan", "Estado cuenta", "fechaNacimiento", "fechaIngreso"
-      }
-    ));
-    tabla3.addMouseListener(new java.awt.event.MouseAdapter() {
+    jMenu1.setText("Interfaz para clientes");
+    jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
       public void mouseClicked(java.awt.event.MouseEvent evt) {
-        tabla3MouseClicked(evt);
+        jMenu1MouseClicked(evt);
       }
     });
-    jScrollPane1.setViewportView(tabla3);
+    jMenu7.add(jMenu1);
 
-    javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-    jPanel4.setLayout(jPanel4Layout);
-    jPanel4Layout.setHorizontalGroup(
-      jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(jPanel4Layout.createSequentialGroup()
-        .addContainerGap()
-        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 684, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-    );
-    jPanel4Layout.setVerticalGroup(
-      jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(jPanel4Layout.createSequentialGroup()
-        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 403, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(0, 0, Short.MAX_VALUE))
-    );
-
-    jPanel1.setBackground(new java.awt.Color(0, 153, 204));
-    jPanel1.setForeground(new java.awt.Color(0, 204, 204));
-
-    btnEditar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-    btnEditar.setText("Editar");
-    btnEditar.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnEditarActionPerformed(evt);
-      }
-    });
-
-    btnGuardar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-    btnGuardar.setText("Gaurdar");
-    btnGuardar.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        btnGuardarActionPerformed(evt);
-      }
-    });
-
-    jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-    jButton1.setText("Limpiar");
-    jButton1.addActionListener(new java.awt.event.ActionListener() {
-      public void actionPerformed(java.awt.event.ActionEvent evt) {
-        jButton1ActionPerformed(evt);
-      }
-    });
-
-    javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-    jPanel1.setLayout(jPanel1Layout);
-    jPanel1Layout.setHorizontalGroup(
-      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(jPanel1Layout.createSequentialGroup()
-        .addGap(42, 42, 42)
-        .addComponent(btnGuardar)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addGap(71, 71, 71)
-        .addComponent(jButton1)
-        .addGap(72, 72, 72))
-    );
-    jPanel1Layout.setVerticalGroup(
-      jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-      .addGroup(jPanel1Layout.createSequentialGroup()
-        .addGap(15, 15, 15)
-        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(btnEditar)
-          .addComponent(btnGuardar)
-          .addComponent(jButton1))
-        .addContainerGap(67, Short.MAX_VALUE))
-    );
-
-    jMenu2.setText("Cerrar sesión");
-
-    jMenu4.setText("Salir");
+    jMenu4.setText("Realizar pago");
     jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
       public void mouseClicked(java.awt.event.MouseEvent evt) {
         jMenu4MouseClicked(evt);
       }
     });
-    jMenu2.add(jMenu4);
+    jMenu7.add(jMenu4);
 
-    jMenuBar1.add(jMenu2);
+    jMenuBar1.add(jMenu7);
 
-    jMenu1.setText("Interfaces");
+    jMenu6.setText("Cerrar sesión");
 
-    jMenu5.setText("Realizar pago");
-    jMenu5.addMouseListener(new java.awt.event.MouseAdapter() {
+    jMenu2.setText("Salir");
+    jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
       public void mouseClicked(java.awt.event.MouseEvent evt) {
-        jMenu5MouseClicked(evt);
+        jMenu2MouseClicked(evt);
       }
     });
-    jMenu1.add(jMenu5);
+    jMenu6.add(jMenu2);
 
-    jMenuBar1.add(jMenu1);
-
-    jMenu3.setText("Interfaz del empleado");
+    jMenuBar1.add(jMenu6);
     jMenuBar1.add(jMenu3);
+
+    jMenu5.setText("Interfaz del administrador para agregar clientes");
+    jMenuBar1.add(jMenu5);
 
     setJMenuBar(jMenuBar1);
 
@@ -342,40 +363,40 @@ public class ServicioCliente extends javax.swing.JFrame {
     pack();
   }// </editor-fold>//GEN-END:initComponents
 
-  private void tabla3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabla3MouseClicked
-    
+  private void tabla2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabla2MouseClicked
+
     btnEditar.setEnabled(true);
-    int fila = tabla3.getSelectedRow();
+    int fila = tabla2.getSelectedRow();
     if (fila == -1) {
       JOptionPane.showMessageDialog(null, "Seleccione una fila");
     } else {
-      
+
       btnGuardar.setEnabled(false);
       // Set the selected row data to the text fields
-      txtid.setText(tabla3.getValueAt(fila, 0).toString());
-      txtcedula.setText(tabla3.getValueAt(fila, 1).toString());
-      txtnombre.setText(tabla3.getValueAt(fila, 2).toString());
-      txtapellido.setText(tabla3.getValueAt(fila, 3).toString());
-      txtidplan.setText(tabla3.getValueAt(fila, 4).toString());
-      txtestadocuenta.setText(tabla3.getValueAt(fila, 5).toString());
-      txtFechaNacimiento.setText(tabla3.getValueAt(fila, 6).toString());
-      txtFechaIngreso.setText(tabla3.getValueAt(fila, 7).toString());
+      txtid.setText(tabla2.getValueAt(fila, 0).toString());
+      txtcedula.setText(tabla2.getValueAt(fila, 1).toString());
+      txtnombre.setText(tabla2.getValueAt(fila, 2).toString());
+      txtapellido.setText(tabla2.getValueAt(fila, 3).toString());
+      txtidplan.setText(tabla2.getValueAt(fila, 4).toString());
+      txtestadocuenta.setText(tabla2.getValueAt(fila, 5).toString());
+      txtFechaNacimiento.setText(tabla2.getValueAt(fila, 6).toString());
+      txtFechaIngreso.setText(tabla2.getValueAt(fila, 7).toString());
     }
-  }//GEN-LAST:event_tabla3MouseClicked
+  }//GEN-LAST:event_tabla2MouseClicked
 
   private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-    int selectedRow = tabla3.getSelectedRow();
+    int selectedRow = tabla2.getSelectedRow();
     try {
       String updateQuery = "UPDATE cliente SET " +
-    "cedula='" + txtcedula.getText() + "', " +
-    "nombre='" + txtnombre.getText() + "', " +
-    "apellido='" + txtapellido.getText() + "', " +
-    "idplan='" + txtidplan.getText() + "', " +
-    "estadoCuenta='" + txtestadocuenta.getText() + "', " +
-    "fechaNacimiento='" + txtFechaNacimiento.getText() + "', " + 
-    "fechaIngreso='" + txtFechaIngreso.getText() + "' " +
-    "WHERE id ='" + txtid.getText() + "'";
-      
+      "cedula='" + txtcedula.getText() + "', " +
+      "nombre='" + txtnombre.getText() + "', " +
+      "apellido='" + txtapellido.getText() + "', " +
+      "idplan='" + txtidplan.getText() + "', " +
+      "estadoCuenta='" + txtestadocuenta.getText() + "', " +
+      "fechaNacimiento='" + txtFechaNacimiento.getText() + "', " +
+      "fechaIngreso='" + txtFechaIngreso.getText() + "' " +
+      "WHERE id ='" + txtid.getText() + "'";
+
       PreparedStatement pst = cn.prepareStatement(updateQuery);
 
       int result = pst.executeUpdate();
@@ -390,8 +411,8 @@ public class ServicioCliente extends javax.swing.JFrame {
       }
 
     } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error al actualizar el registro: " + ex.getMessage());
-        }
+      JOptionPane.showMessageDialog(null, "Error al actualizar el registro: " + ex.getMessage());
+    }
   }//GEN-LAST:event_btnEditarActionPerformed
 
   private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
@@ -409,17 +430,16 @@ public class ServicioCliente extends javax.swing.JFrame {
 
       pst.executeUpdate();
       JOptionPane.showMessageDialog(null, "cliente ingresado al dedillo");
-      
+
       //para que la tabla se actualice con el nuevo valor
-      
+
       mostrarDatos();
       limpiarCampos();
   }//GEN-LAST:event_btnGuardarActionPerformed
-  catch(Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error al ingresar el registro: " + ex.getMessage());
-          }
-    
-          }
+   catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error al actualizar el registro: " + ex.getMessage());
+        }
+  }
   
   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     limpiarCampos();
@@ -430,16 +450,50 @@ public class ServicioCliente extends javax.swing.JFrame {
     // TODO add your handling code here:
   }//GEN-LAST:event_txtidActionPerformed
 
-  private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
-    InicioSesion inicio= new InicioSesion();
-                //Para que el menu de login se cierre
-              setVisible(false);
-                inicio.setVisible(true);
-  }//GEN-LAST:event_jMenu4MouseClicked
+  private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+    int selectedRow = tabla2.getSelectedRow();
 
-  private void jMenu5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu5MouseClicked
-   
-  }//GEN-LAST:event_jMenu5MouseClicked
+    if (selectedRow != -1) {
+      try {
+        String deleteQuery = "DELETE FROM cliente WHERE id='" + txtid.getText() + "'";
+
+        Statement st = cn.createStatement();
+        int result = st.executeUpdate(deleteQuery);
+
+        if (result > 0) {
+          JOptionPane.showMessageDialog(null, "Registro eliminado correctamente");
+          mostrarDatos(); // Refresh the table
+          limpiarCampos();
+          btnGuardar.setEnabled(true);
+        } else {
+          JOptionPane.showMessageDialog(null, "No se pudo eliminar el registro");
+        }
+
+      } catch (Exception ex) {
+        JOptionPane.showMessageDialog(null, "Error al eliminar el registro: " + ex.getMessage());
+      }
+    } else {
+      JOptionPane.showMessageDialog(null, "Selecciona una fila para eliminar");
+    }
+  }//GEN-LAST:event_btnEliminarActionPerformed
+
+  private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+    Administrador admin = new Administrador();
+    setVisible(false);
+              admin.setVisible(true);
+  }//GEN-LAST:event_jMenu1MouseClicked
+
+  private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+    InicioSesion inicio= new InicioSesion();
+    setVisible(false);
+              inicio.setVisible(true);
+  }//GEN-LAST:event_jMenu2MouseClicked
+
+  private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+   Ipago ipg = new Ipago();
+    setVisible(false);
+              ipg.setVisible(true);
+  }//GEN-LAST:event_jMenu4MouseClicked
 
   /**
    * @param args the command line arguments
@@ -458,26 +512,27 @@ public class ServicioCliente extends javax.swing.JFrame {
         }
       }
     } catch (ClassNotFoundException ex) {
-      java.util.logging.Logger.getLogger(ServicioCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(AdministradorCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (InstantiationException ex) {
-      java.util.logging.Logger.getLogger(ServicioCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(AdministradorCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (IllegalAccessException ex) {
-      java.util.logging.Logger.getLogger(ServicioCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(AdministradorCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-      java.util.logging.Logger.getLogger(ServicioCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+      java.util.logging.Logger.getLogger(AdministradorCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
     }
     //</editor-fold>
 
     /* Create and display the form */
     java.awt.EventQueue.invokeLater(new Runnable() {
       public void run() {
-        new ServicioCliente().setVisible(true);
+        new AdministradorCliente().setVisible(true);
       }
     });
   }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton btnEditar;
+  private javax.swing.JButton btnEliminar;
   private javax.swing.JButton btnGuardar;
   private javax.swing.JButton jButton1;
   private javax.swing.JLabel jLabel1;
@@ -493,12 +548,14 @@ public class ServicioCliente extends javax.swing.JFrame {
   private javax.swing.JMenu jMenu3;
   private javax.swing.JMenu jMenu4;
   private javax.swing.JMenu jMenu5;
+  private javax.swing.JMenu jMenu6;
+  private javax.swing.JMenu jMenu7;
   private javax.swing.JMenuBar jMenuBar1;
   private javax.swing.JPanel jPanel1;
   private javax.swing.JPanel jPanel3;
   private javax.swing.JPanel jPanel4;
   private javax.swing.JScrollPane jScrollPane1;
-  public javax.swing.JTable tabla3;
+  public javax.swing.JTable tabla2;
   public javax.swing.JTextField txtFechaIngreso;
   public javax.swing.JTextField txtFechaNacimiento;
   public javax.swing.JTextField txtapellido;
@@ -508,18 +565,6 @@ public class ServicioCliente extends javax.swing.JFrame {
   public javax.swing.JTextField txtidplan;
   public javax.swing.JTextField txtnombre;
   // End of variables declaration//GEN-END:variables
-
-  private void limpiarCampos() {
-    txtid.setText("");
-    txtcedula.setText("");
-    txtnombre.setText("");
-    txtapellido.setText("");
-    txtidplan.setText("");
-    txtestadocuenta.setText("");
-    txtFechaNacimiento.setText("");
-    txtFechaIngreso.setText("");
-
-  }
 
   private void mostrarDatos() {
     DefaultTableModel modelo= new DefaultTableModel();
@@ -534,7 +579,7 @@ public class ServicioCliente extends javax.swing.JFrame {
 
     
     
-    tabla3.setModel(modelo);
+    tabla2.setModel(modelo);
     String consul = "select * from cliente";
     String[] datos = new String[8];
     try {
@@ -558,5 +603,19 @@ public class ServicioCliente extends javax.swing.JFrame {
     catch (Exception ex) {
       System.out.println(ex);
     }
-}
+
+  }
+
+  private void limpiarCampos() {
+  txtid.setText("");
+    txtcedula.setText("");
+    txtnombre.setText("");
+    txtapellido.setText("");
+    txtidplan.setText("");
+    txtestadocuenta.setText("");
+    txtFechaNacimiento.setText("");
+    txtFechaIngreso.setText("");
+
+  }
+
 }
